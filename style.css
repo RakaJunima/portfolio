@@ -1,7 +1,17 @@
-/* style.css */
+/* =========================================================
+   style.css — Portfolio Website Stylesheet
+   Author: M. Raka Tutut Junima
+   Description: Clean modern portfolio layout with responsive design
+   ========================================================= */
 
+/* ------------------------------
+   GOOGLE FONT IMPORT
+------------------------------ */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
+/* ------------------------------
+   ROOT VARIABLES (THEME COLORS & GLOBAL VALUES)
+------------------------------ */
 :root {
   --bg1: #e3f2fd;
   --bg2: #f8f9ff;
@@ -14,13 +24,18 @@
   --font: 'Poppins', 'Segoe UI', Roboto, sans-serif;
 }
 
-/* Reset and base styles */
+/* ------------------------------
+   GLOBAL RESET
+------------------------------ */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/* ------------------------------
+   BODY STYLING & BACKGROUND
+------------------------------ */
 body {
   font-family: var(--font);
   background: linear-gradient(135deg, var(--bg1) 0%, var(--bg2) 100%);
@@ -32,7 +47,9 @@ body {
   overflow-x: hidden;
 }
 
-/* Decorative gradient shapes */
+/* ------------------------------
+   DECORATIVE GRADIENT SHAPES
+------------------------------ */
 body::before,
 body::after {
   content: '';
@@ -57,6 +74,9 @@ body::after {
   background: radial-gradient(circle at center, var(--accent2) 0%, transparent 70%);
 }
 
+/* ------------------------------
+   MAIN WRAPPER CONTAINER
+------------------------------ */
 .wrap {
   max-width: var(--max-width);
   margin: 40px auto;
@@ -65,7 +85,9 @@ body::after {
   z-index: 1;
 }
 
-/* Navbar */
+/* =========================================================
+   NAVBAR SECTION
+========================================================= */
 .navbar {
   display: flex;
   justify-content: space-evenly;
@@ -76,7 +98,7 @@ body::after {
   border-radius: 16px;
   box-shadow: 0 4px 20px rgba(99, 102, 241, 0.08);
   position: fixed;
-  top: 20px; /* jarak dari atas layar */
+  top: 20px;
   left: 50%;
   transform: translateX(-50%);
   width: 90%;
@@ -84,13 +106,14 @@ body::after {
   z-index: 10;
 }
 
+/* Navbar logo (optional, not in HTML yet) */
 .logo {
   font-weight: 700;
   font-size: 20px;
   color: var(--accent);
 }
 
-/* Nav Links */
+/* NAV LINKS */
 .nav-links {
   list-style: none;
   display: flex;
@@ -108,7 +131,7 @@ body::after {
   color: var(--accent);
 }
 
-/* Burger Icon */
+/* BURGER MENU (mobile) */
 .burger {
   display: none;
   flex-direction: column;
@@ -126,7 +149,7 @@ body::after {
   transition: 0.3s;
 }
 
-/* Responsive Navbar */
+/* RESPONSIVE NAVBAR */
 @media (max-width: 880px) {
   .burger {
     display: flex;
@@ -151,6 +174,7 @@ body::after {
     animation: fadeIn 0.3s ease forwards;
   }
 
+  /* Animate burger icon when active */
   .burger.toggle span:nth-child(1) {
     transform: rotate(45deg) translateY(6px);
   }
@@ -164,47 +188,15 @@ body::after {
   }
 }
 
+/* Simple fade animation */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Kurangi jarak antara header dan section pertama */
-.wrap {
-  margin-top: 40px; /* sebelumnya 80px */
-}
-
-/* Hapus grid dua kolom, jadi satu kolom penuh */
-.grid {
-  display: block;
-}
-
-/* Pastikan semua section sejajar rapi */
-.card {
-  background: rgba(255, 255, 255, 0.85);
-  border-radius: var(--radius);
-  padding: 24px 28px;
-  margin-bottom: 22px;
-  box-shadow: 0 6px 22px rgba(16, 24, 40, 0.05);
-  backdrop-filter: blur(12px);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 26px rgba(99, 102, 241, 0.15);
-}
-
-/* Hilangkan panel kanan (contact lama) */
-.grid > .card:nth-child(2) {
-  display: none;
-}
-
-
-
-
-
-/* Header section */
+/* =========================================================
+   HEADER SECTION (PROFILE)
+========================================================= */
 header {
   display: grid;
   grid-template-columns: 160px 1fr;
@@ -216,6 +208,7 @@ header {
   animation: fadeUp 1s ease forwards;
 }
 
+/* Profile photo */
 .photo {
   width: 160px;
   height: 160px;
@@ -237,6 +230,7 @@ header {
   box-shadow: 0 10px 40px rgba(99, 102, 241, 0.3);
 }
 
+/* Name and role text */
 .name {
   font-size: 26px;
   font-weight: 700;
@@ -251,10 +245,12 @@ header {
   font-size: 15px;
 }
 
+/* Action buttons */
 .actions {
   margin-top: 12px;
 }
 
+/* Button styles */
 .btn {
   display: inline-block;
   padding: 10px 18px;
@@ -281,15 +277,11 @@ header {
   transform: translateY(-3px) scale(1.02);
 }
 
-/* Layout */
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 340px;
-  gap: 22px;
-  margin-top: 28px;
-}
+/* =========================================================
+   MAIN SECTIONS (CARDS)
+========================================================= */
 
-/* General card style for all sections */
+/* Reusable card style */
 .card {
   background: rgba(255, 255, 255, 0.85);
   border-radius: var(--radius);
@@ -301,8 +293,8 @@ header {
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(99, 102, 241, 0.15);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 26px rgba(99, 102, 241, 0.15);
 }
 
 .card h2 {
@@ -318,7 +310,7 @@ header {
   line-height: 1.6;
 }
 
-/* Section-specific styling */
+/* Education section */
 .edu-item h3 {
   font-size: 16px;
   font-weight: 700;
@@ -326,6 +318,7 @@ header {
   margin-bottom: 4px;
 }
 
+/* Project section */
 .project {
   margin-bottom: 16px;
 }
@@ -351,6 +344,7 @@ header {
   text-decoration: underline;
 }
 
+/* Contact section */
 .contact-list {
   list-style: none;
   padding-left: 0;
@@ -370,22 +364,7 @@ header {
   text-decoration: underline;
 }
 
-
-.section {
-  margin-bottom: 18px;
-}
-
-h2 {
-  margin-bottom: 12px;
-  font-size: 17px;
-  color: var(--accent);
-}
-
-.lead {
-  color: var(--muted);
-}
-
-/* Skills */
+/* Skills section */
 .skills {
   display: flex;
   flex-wrap: wrap;
@@ -405,25 +384,9 @@ h2 {
   animation: fadeUp 0.6s ease forwards;
 }
 
-/* Text styles */
-.muted {
-  color: var(--muted);
-  font-size: 14px;
-}
-
-.small {
-  font-size: 13px;
-  color: var(--muted);
-}
-
-/* Contact section */
-.contact-list {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-/* Footer */
+/* =========================================================
+   FOOTER
+========================================================= */
 footer {
   text-align: center;
   color: var(--muted);
@@ -434,7 +397,9 @@ footer {
   animation: fadeUp 1s ease 0.4s forwards;
 }
 
-/* Animations */
+/* =========================================================
+   ANIMATIONS
+========================================================= */
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -446,7 +411,9 @@ footer {
   }
 }
 
-/* Responsive */
+/* =========================================================
+   RESPONSIVE DESIGN
+========================================================= */
 @media (max-width: 880px) {
   header {
     grid-template-columns: 110px 1fr;
