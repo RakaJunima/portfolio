@@ -414,17 +414,45 @@ footer {
 /* =========================================================
    RESPONSIVE DESIGN
 ========================================================= */
-@media (max-width: 880px) {
+@media (max-width: 768px) {
   header {
-    grid-template-columns: 110px 1fr;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 20px;
   }
 
-  .photo {
-    width: 110px;
-    height: 110px;
+  header .photo {
+    flex-shrink: 0;
   }
 
-  .grid {
-    grid-template-columns: 1fr;
+  header .photo img {
+    width: 100px;
+    height: 100px;
+  }
+
+  header .name {
+    font-size: 1.4rem;
+    line-height: 1.2;
+  }
+
+  .role {
+    font-size: 0.9rem;
+  }
+
+  .actions {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .btn {
+    width: auto;
+    text-align: center;
+  }
+
+  main.wrap {
+    margin-top: 1.5rem;
   }
 }
+
