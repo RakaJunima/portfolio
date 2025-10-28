@@ -431,6 +431,10 @@ footer {
     height: 100px;
   }
 
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
   header .name {
     font-size: 1.4rem;
     line-height: 1.2;
