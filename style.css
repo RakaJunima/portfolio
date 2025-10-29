@@ -446,3 +446,70 @@ footer {
   }
 }
 
+/* === Responsive Navbar === */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 8px 16px;
+    height: auto;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: none;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    backdrop-filter: blur(8px);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 8px 0;
+  }
+
+  .nav-links a {
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    gap: 4px;
+    width: 28px;
+    height: 22px;
+  }
+
+  .burger span {
+    display: block;
+    width: 24px;
+    height: 3px;
+    background: var(--accent);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+  }
+
+  /* Saat burger aktif (animasi X) */
+  .burger.active span:nth-child(1) {
+    transform: rotate(45deg) translateY(8px);
+  }
+  .burger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .burger.active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-8px);
+  }
+}
+
+
