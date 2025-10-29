@@ -512,4 +512,37 @@ footer {
   }
 }
 
+/* Responsive adjustments for small screens */
+@media (max-width: 480px) {
+  .navbar {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 8px 0;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .burger {
+    top: 12px;
+    right: 20px;
+  }
+
+  header {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .photo {
+    margin: 0 auto;
+  }
+
+  .actions {
+    justify-content: center;
+  }
+}
+
 
